@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Administración</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <!-- MENÚ -->
+    <div id="contenedorNav"></div>
+
+    <div class="container">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-12 text-center mt-4">
+                <h1>Administración de Productos</h1>
+            </div>
+            <div class="col-auto">
+                <button class="btn btn-outline-success mb-3" id="añadir">Añadir Producto</button>
+            </div>
+        </div>
+        <div>
+            <p id="contMensaje" class="confirmado text-success" style="position: fixed; top: 100px;"></p>
+        </div>
+
+        <!-- Formulario para Añadir Producto -->
+        <div id="prodNuevo" class="new" style="display: none;">
+            <div class="d-flex justify-content-center align-items-center ">
+                <div class="card border border-1 border-dark" style="width: 100%; max-width: 300px;">
+                    <h5 class="card-title text-center mt-3">Nuevo producto</h5>
+                    <div class="card-body">
+                        <form id="formAñadir">
+                            <div class="mb-3">
+                                <input type="text" class="form-control" placeholder="Titulo" name="Titulo">
+                            </div>
+                            <div class="mb-3">
+                                <input type="text" class="form-control" placeholder="Descripcion" name="Descripcion">
+                            </div>
+                            <div class="mb-3">
+                                <input type="number" class="form-control" placeholder="Precio" name="Precio">
+                            </div>
+                            <button type="submit" class="btn btn-success w-100">Añadir Producto</button>
+                            <p id="mensaje" class="text-danger m-2"></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-lg-12 d-flex flex-wrap flex-row justify-content-center" id="contProducAdmin">
+            </div>
+        </div>
+
+        <!-- Formulario para Editar Producto -->
+        <div id="prodEditar" class="newE mb-5">
+            <div class="d-flex justify-content-center align-items-center ">
+                <div class="card border border-1 border-dark" style="width: 100%; max-width: 300px;">
+                    <h5 class="card-title text-center mt-3">Editar producto</h5>
+                    <div class="card-body">
+                        <form id="formEditar">
+                            <input type="hidden" name="idEditar">
+                            <div class="mb-3">
+                                <input type="text" class="form-control" placeholder="Titulo" name="Titulo" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="text" class="form-control" placeholder="Descripcion" name="Descripcion"
+                                    required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="number" class="form-control" placeholder="Precio" name="Precio" required>
+                            </div>
+                            <button type="submit" class="btn btn-warning w-100">Editar Producto</button>
+                            <p id="mensajeEditar" class="text-danger m-2"></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+        <!-- FOOTER -->
+        <div id="contenedorFooter"></div>
+
+    
+    <!-- Scripts -->
+    <script type="module" src="./scr/index.js"></script>
+    <script src="./js/admin.js"></script>
+    <script src="./js/nuevoProd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

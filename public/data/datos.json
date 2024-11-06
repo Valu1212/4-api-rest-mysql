@@ -1,0 +1,46 @@
+{
+    "productos": [
+        {
+            "id": 1,
+            "imagen": "./imag/html.jpg",
+            "titulo": "Curso HTML",
+            "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita mollitia laboriosam incidunt maiores eaque aut repudiandae, eos doloremque dolorum porro possimus delectus, asperiores consequuntur ipsum necessitatibus nostrum earum perspiciatis eveniet.",
+            "precio": "$̶1̶0̶0̶0̶0̶0̶  | $80000"
+        },
+        {
+            "id": 2,
+            "imagen": "./imag/php.jpg",
+            "titulo": "Curso PHP",
+            "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam nostrum, sequi omnis, maiores alias deserunt saepe corrupti dolor placeat aperiam ex necessitatibus incidunt voluptatibus. Iusto.",
+            "precio": "$̶1̶0̶0̶0̶0̶0̶  | $80000"
+        },
+        {
+            "id": 3,
+            "imagen": "./imag/css.jpg",
+            "titulo": "Curso CSS",
+            "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo accusantium omnis harum quaerat, perferendis deleniti impedit cupiditate numquam dicta, odit repudiandae? Adipisci nemo earum cum ipsa labore quisquam quasi ducimus inventore ex quia, nam voluptates sapiente voluptatum nulla officiis doloremque, ullam officia veniam placeat optio.",
+            "precio": "$̶̶1̶0̶0̶0̶0̶0̶ | $80000"
+        },
+        {
+            "id": 4,
+            "imagen": "./imag/python.jpg",
+            "titulo": "Curso PYTHON",
+            "descripcion": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus soluta ipsa minus recusandae, quidem, culpa aliquam eaque ducimus, consequuntur facilis libero magni dolorum consequatur ad. Repellendus eveniet id optio eum fugiat. Corrupti temporibus rem consectetur voluptatum nobis veritatis harum natus ad neque.",
+            "precio": "$̶1̶0̶0̶0̶0̶0̶  | $80000"
+        },
+        {
+            "id": 5,
+            "imagen": "./imag/java.jpg",
+            "titulo": "Curso JAVA",
+            "descripcion": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. A possimus, deleniti aspernatur, doloribus exercitationem doloremque suscipit tempore, optio cupiditate nisi ipsam iure atque. Quam quasi aliquid dolorem.",
+            "precio": "$̶1̶0̶0̶0̶0̶0̶  | $80000"
+        },
+        {
+            "id": "6",
+            "imagen": "./imag/java.jpg",
+            "titulo": "prog",
+            "descripcion": "dgdsg",
+            "precio": "571"
+        }
+    ]
+}

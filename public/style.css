@@ -1,0 +1,65 @@
+body {
+    background-color: #f8f9fa;
+}
+
+.form-title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #007bff;
+    margin-bottom: 30px;
+}
+.form-group {
+    margin-bottom: 15px;
+}
+.form-group label {
+    font-weight: bold;
+}
+.btn-custom {
+    width: 100%;
+    background-color: #007bff;
+    color: white;
+}
+#salirBtn, #cancelarEditBtn {
+    width: 100%;
+}
+.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+.justify-content-center {
+    justify-content: center;
+}
+#productListContainer {
+    margin: 50px;
+}
+.list-group-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.btn-edit, .btn-delete {
+    margin-left: 10px;
+}
+#courseCard {
+    margin-top: 20px;
+}
+
+#btnAdmin {
+    display: block;
+    margin: 0 auto; 
+}
+
+/* Configuración básica del footer para que siempre se muestre completo */
+footer {
+    width: 100%;
+}
+
+.container, .container-fluid {
+    flex: 1;
+}
+
+#contenedorFooter {
+    margin-top: auto; /* Coloca el footer al final del contenido */
+}
+
