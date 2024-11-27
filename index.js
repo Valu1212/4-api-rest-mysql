@@ -71,68 +71,42 @@ app.post('/productos', (req, res) => {
 //  res.json({"mensaje":'Nuevo producto agregado'});
 
 
-
 app.put('/productos/:id', (req, res) => {
-    // // res.send('Actualizar producto por id')
-    // const id = req.params.id;
-    // const nuevosDatos = req.body;
-    // const datos = leerDatos()
-    // const prodEncontrado = datos.productos.find((p) => p.id == req.params.id)
-    // console.log(prodEncontrado)
-    // if (!prodEncontrado) {
-    //     return res.status(404).json({ "Mensaje": "No se encontró el producto" })
-    // }
-    // datos.productos = datos.productos.map(p => p.id == req.params.id ? { ...p, ...nuevosDatos } : p)
-    // escribirDatos(datos)
-    // res.json({ "Mensaje": "Producto Actualizado" })
-
-
-
-    const valores = Object.values(req.body);
-    //console.log(valores)
-    const sql = "UPDATE productos SET titulo = ?, descripcion = ?, precio = ?, WHERE id = ? "
-    baseDatos.query(sql, values, (err, result) => {
+    const id = req.params.id;
+    const { titulo, descripcion, precio } = req.body;
+    const sql = "UPDATE productos SET titulo = ?, descripcion = ?, precio = ? WHERE id = ?";
+    baseDatos.query(sql, [titulo, descripcion, precio, id], (err, result) => {
         if (err) {
-            console.error('ERROR AL MODIFICAR REGISTRO')
-            return;
+            console.error('ERROR AL MODIFICAR REGISTRO:', err.message);
+            return res.status(500).json({ mensaje: 'Error al modificar el producto' });
         }
-        console.log(result)
-        res.json({ mensaje: 'producto actualizado',
-            data: result
+        if (result.affectedRows === 0) {
+            return res.status(404).json({ mensaje: 'Producto no encontrado' });
+        }
+        res.json({
+            mensaje: 'Producto actualizado exitosamente',
+            data: result,
+        });
+    });
+});
 
-         })
-    })
-})
-
-
-
-
+// Endpoint para eliminar un producto por ID
 app.delete('/productos/:id', (req, res) => {
-    const sql = "DELETE FROM productos WHERE id = ?"
-    baseDatos.query(sql, [id],(err,result)=>{
-        if(err){
-            console.error('error al borrar')
-            return;
+    const id = req.params.id;
+    const sql = "DELETE FROM productos WHERE id = ?";
+    baseDatos.query(sql, [id], (err, result) => {
+        if (err) {
+            console.error('Error al borrar el producto:', err.message);
+            return res.status(500).json({ mensaje: 'Error al eliminar el producto' });
         }
-        //console.log(result)
-    })
-    res.json({ "Mensaje": "Producto Eliminado" })
-})
+        if (result.affectedRows === 0) {
+            return res.status(404).json({ mensaje: 'Producto no encontrado' });
+        }
+        res.json({ mensaje: 'Producto eliminado exitosamente' });
+    });
+});
 
-    // res.send('Eliminando Producto')
-   // const id = req.params.id;
-   // const datos = leerDatos()
-   // const prodEncontrado = datos.productos.find((p) => p.id == req.params.id)
-  //  if (!prodEncontrado) {
-  //      return res.status(404).json(`No se encuentra el producto`)
-  //  }
-  //  datos.productos = datos.productos.filter((p) => p.id != req.params.id)
-  //  let indice = 1
-  //  datos.productos.map((p) => {
-  //      p.id = indice
-  //      indice++
-  //  })
-  //  escribirDatos(datos)
+
 
 
 app.listen(port, () => {
