@@ -4,6 +4,7 @@ const conexion = mysql.createConnection({
     user: process.env.MYSQL_ADDON_USER|| "root",
     password: process.env.MYSQL_ADDON_PASSWORD|| "",
     database: process.env.MYSQL_ADDON_DB || "tienda1",
+    port: process.env.MYSQL_ADDON_PORT || 3306,
     connectionLimit:5
 });
 conexion.connect((err)=>{
